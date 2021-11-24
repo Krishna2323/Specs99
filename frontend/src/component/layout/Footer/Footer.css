@@ -1,0 +1,186 @@
+footer{
+  display: flex;
+align-items: center;  min-height: 40vh;
+background: -webkit-linear-gradient(rgb(229, 205, 117), rgb(126, 181, 103));
+margin-top: 10vmax;
+}
+
+footer >.leftFooter{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 1vmax;
+  align-items: center;
+  width: 20vmax;
+}
+
+footer >.leftFooter>.icons > i{
+  font-size: 4vmax;
+  margin: 1vmax;
+  color: black;
+}
+footer >.leftFooter > h4{
+font-family: sans-serif;
+font-size: 1.7vmax;}
+
+footer >.leftFooter > p{
+  font-family: sans-serif;
+  font-size: 1vmax;}
+
+.midFooter{
+  display: flex;
+  width: 60%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+}
+
+footer >.midFooter > img{
+  width: 7vmax;
+  border-radius: 100%;
+}
+
+footer >.midFooter > p{
+  color: rgb(255, 255, 255);
+  margin-top: 1vmax;
+  font-size: 1vmax;
+  font-weight: 450;
+}
+
+
+.rightFooter{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 20%;
+
+}
+
+
+.rightFooter>h4{
+  font-family: sans-serif;
+  font-size: 1.9vmax;
+
+}
+
+.fa-facebook{
+font-size: 4vmax;
+margin: 1vmax;
+color: black;
+}
+
+.fa-instagram{
+  font-size: 4vmax;
+  margin: 1vmax;
+  color: black;
+
+
+  }
+  .fa-twitter{
+    font-size: 4vmax;
+    margin: 1vmax;
+    color: black;
+
+
+    }
+
+    @media screen and (max-width: 600px){
+
+      footer{
+        display: flex;
+      align-items: center;  min-height: 25vh;
+      background: -webkit-linear-gradient(rgb(229, 205, 117), rgb(126, 181, 103));
+      margin-top: 10vmax;
+      }
+      
+      footer >.leftFooter{
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-top: -2vmax;
+        margin: 2 1vmax;        
+        align-items: center;
+        width: 20%;
+      }
+      
+      footer >.leftFooter>.icons > i{
+        display: flex;
+        flex-direction: column;
+        font-size: 4vmax;
+        margin: 1vmax;
+        color: black;
+      }
+      footer >.leftFooter > h4{
+      font-family: sans-serif;
+      font-size: 1.7vmax;}
+      
+      footer >.leftFooter > p{
+        font-family: sans-serif;
+        font-size: 1vmax;}
+      
+      .midFooter{
+        margin: auto;
+        display: flex;
+        width: 60%;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        align-self: center;
+      }
+      
+      footer >.midFooter > img{
+        width: 12vmax;
+        border-radius: 100%;
+      }
+      
+      footer >.midFooter > p{
+        color: rgb(255, 255, 255);
+        margin-top: 1vmax;
+        font-size: 1vmax;
+        font-weight: 450;
+      }
+      
+      
+      .rightFooter{
+        margin-top: -2vmax;
+        margin: 2 1vmax;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 20%;
+      
+      }
+      
+      
+      .rightFooter>h4{
+        font-family: sans-serif;
+        font-size: 1.9vmax;
+      
+      }
+      
+      .fa-facebook{
+      font-size: 4vmax;
+      margin: 1vmax;
+      color: black;
+      }
+      
+      .fa-instagram{
+        font-size: 4vmax;
+        margin: 1vmax;
+        color: black;
+      
+      
+        }
+        .fa-twitter{
+          font-size: 4vmax;
+          margin: 1vmax;
+          color: black;
+      
+      
+          }
+    }

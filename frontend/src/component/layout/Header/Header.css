@@ -1,0 +1,203 @@
+.navbarTop {
+  display: flex;
+  justify-content:unset;
+  position: block;
+  align-items: center;
+
+
+  background: -webkit-linear-gradient(rgb(29, 29, 29), rgb(0, 0, 0));
+
+  opacity: 95%;
+  height: 70px;
+}
+
+.navbarTop > li > a {
+  text-decoration: none;
+  color: #00ffc8;
+margin: 1.5vmax;
+font-size: .9vmax;
+}
+
+.navbarTop > li > a:hover {
+  text-decoration: none;
+  color: #ffffff;
+margin: 1.5vmax;
+font-size: .9vmax;
+}
+
+.navbarTop > li{
+
+margin-left: 5vmax;
+}
+
+.navmob{
+  display: none;
+}
+
+
+
+
+
+.loginButton{
+  font-size: 1.1vmax;
+  background: transparent;
+  border-radius: 10px;
+  border-color: rgb(0, 255, 136);
+  width: 9vmax;
+  margin-left: 2vmax;
+  color: rgb(255, 255, 255);
+}
+
+
+
+.searchBar > form > .searchButton {
+  background: transparent;
+  border: none;
+  color: rgb(255, 255, 255);
+  margin-left: 1vmax;
+  align-items: center;
+
+
+}
+
+.searchBar {
+  margin-left: 15vmax;
+}
+
+.searchBar > form > input {
+  border: none;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.76);
+  width: 15vmax;
+  font-size: 1.2vmax;
+  outline: none;
+  color:rgb(255, 255, 255);
+  font-weight: 100;
+  background: transparent;
+}
+
+
+.searchBar > form > input::placeholder {
+
+  color: rgb(255, 255, 255);
+
+}
+.navbarHeading {
+  background: -webkit-linear-gradient(rgb(229, 205, 117), rgb(126, 181, 103));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-left: 1vmax;
+  justify-content: center;
+  display: flex;
+}
+
+
+
+@media screen and (max-width: 600px) {
+  .navbarTop {
+    display: flex;
+    justify-content:unset;
+    overflow: auto;
+  
+  
+    background: -webkit-linear-gradient(rgb(29, 29, 29), rgb(0, 0, 0));
+  
+    opacity: 95%;
+    height: 30px;
+  }
+  
+  .navbarTop > li > a {
+    text-decoration: none;
+    color: #00ffc8;
+  margin: 1.5vmax;
+  font-size:1.2vmax;
+  }
+  
+  .navbarTop > li > a:hover {
+    text-decoration: none;
+    color: #ffffff;
+  margin: 0vmax;
+  font-size: .9vmax;
+  }
+  
+  .navbarTop > .navlap{
+  display: none;
+ 
+  }
+
+
+  .navmob{
+background-color: rgb(139, 255, 253);  
+  height: 4vmax;
+    justify-content: center;
+    display: flex;
+    
+  }
+
+  .navmob >a{
+    text-decoration: none;
+    color: #000000;
+  margin: 0 1.2vmax;
+  background: transparent;
+    margin-top: .7vmax;
+  font-size:1.6vmax;
+  }
+  
+  
+  
+  
+  
+  .loginButton{
+    font-size: 1.1vmax;
+    background: transparent;
+    border-radius: 10px;
+    border-color: rgb(0, 255, 136);
+    width: 2vmax;
+    margin-left: 0vmax;
+    color: rgb(255, 255, 255);
+  }
+  
+  
+  
+  .searchBar > form > .searchButton {
+    background: transparent;
+    border: none;
+    color: rgb(255, 255, 255);
+    margin-left: 1vmax;
+    align-items: center;
+  
+  
+  }
+  
+  .searchBar {
+    margin-left: 5vmax;
+  }
+  
+  .searchBar > form > input {
+    border: none;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.76);
+    width: 19vmax;
+    font-size: 1.2vmax;
+    outline: none;
+    color:rgb(255, 255, 255);
+    font-weight: 100;
+    background: transparent;
+  }
+  
+  
+  .searchBar > form > input::placeholder {
+  
+    color: rgb(255, 255, 255);
+  
+  }
+  .navbarHeading {
+    background: -webkit-linear-gradient(rgb(229, 205, 117), rgb(126, 181, 103));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 2.5vmax;
+    justify-content: center;
+    display: flex;
+    margin-left: .3vmax;
+    margin-top: .3vmax;
+  }
+  
+}
