@@ -5,7 +5,7 @@
 /frontend/.pnp
 /frontend/.pnp.js
 
-# testing
+# testinggit pull origin master
 /frontend/coverage
 
 # production

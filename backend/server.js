@@ -16,7 +16,7 @@ if(process.env.NODE_ENV !== "PRODUCTION"){
 
 }
 connectToDb();
-const port= process.env.LOCAL 
+const port= process.env.PORT 
 
 
 cloudinary.config({
