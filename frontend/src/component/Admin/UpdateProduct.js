@@ -15,12 +15,15 @@ import SpellcheckIcon from "@material-ui/icons/Spellcheck";
 import AttachMoneyIcon from "@material-ui/icons/AttachMoney";
 import SideBar from "./Sidebar";
 import { UPDATE_PRODUCT_RESET } from "../../constants/Productconstants";
+import { FormatSize } from "@material-ui/icons";
 
 const UpdateProduct = ({ history, match }) => {
   const dispatch = useDispatch();
   const alert = useAlert();
 
   const { error, product,loading:ProductLoading } = useSelector((state) => state.productDetails);
+
+
 
   const {
     loading,
@@ -36,16 +39,34 @@ const UpdateProduct = ({ history, match }) => {
   const [images, setImages] = useState([]);
   const [oldImages, setOldImages] = useState([]);
   const [imagesPreview, setImagesPreview] = useState([]);
+  const [mrp, setMrp] = useState(0);
+  const [size, setSize] = useState("")
+  const [displayType, setDisplayType] = useState("")
 
   const categories = [
-    "Laptop",
-    "Footwear",
-    "Bottom",
-    "Tops",
-    "Attire",
-    "Camera",
-    "SmartPhones",
+    "Sunglasses",
+    "Spectacles",
+    "Contact Lenses",
+    "Blue-Cut Glasses"
+
   ];
+  const sizes =[
+    "Small",
+    "Medium",
+    "Large"
+  ];
+
+  
+  const display =[
+    "Featured",
+    "New Arrival",
+    "Most Selling",
+    "99",
+    "Trending",
+    "Top Brands",
+    "Product",
+    "Banner"
+  ]
 
   const productId = match.params.id;
 
@@ -61,6 +82,9 @@ const UpdateProduct = ({ history, match }) => {
       setCategory(product.category);
       setStock(product.stock);
       setOldImages(product.image);
+      setMrp(product.mrp);
+      setSize(product.size);
+      setDisplayType(product.displayType)
     }
 
     if (error) {
@@ -100,6 +124,12 @@ const UpdateProduct = ({ history, match }) => {
     myForm.set("description", description);
     myForm.set("category", category);
     myForm.set("stock", Stock);
+    myForm.set("displayType", displayType);
+    myForm.set("mrp", mrp);
+    myForm.set("size", size);
+
+
+
 
     images.forEach((image) => {
       myForm.append("image", image);
@@ -161,6 +191,16 @@ const UpdateProduct = ({ history, match }) => {
                 value={price}
               />
             </div>
+            <div>
+              <AttachMoneyIcon />
+              <input
+                type="number"
+                placeholder="MRP"
+                required
+                onChange={(e) => setMrp(e.target.value)}
+                value={mrp}
+              />
+            </div>
 
             <div>
               <DescriptionIcon />
@@ -189,6 +229,20 @@ const UpdateProduct = ({ history, match }) => {
               </select>
             </div>
 
+            
+            <div>
+              <FormatSize />
+              <select onChange={(e) => setSize(e.target.value)}>
+                <option value={size}>Choose Size</option>
+                {sizes.map((cate) => (
+                  <option key={cate} value={cate}>
+                    {cate}
+                  </option>
+                ))}
+              </select>
+            </div>
+
+
             <div>
               <StorageIcon />
               <input
@@ -198,6 +252,17 @@ const UpdateProduct = ({ history, match }) => {
                 onChange={(e) => setStock(e.target.value)}
                 value={Stock}
               />
+            </div>
+            <div>
+              <FormatSize />
+              <select value={displayType} onChange={(e) => setDisplayType(e.target.value)}>
+                <option value="">Choose Display Type</option>
+                {display.map((cate) => (
+                  <option key={cate} value={cate}>
+                    {cate}
+                  </option>
+                ))}
+              </select>
             </div>
 
             <div id="createProductFormFile">
@@ -216,6 +281,8 @@ const UpdateProduct = ({ history, match }) => {
                   <img key={index} src={image.url} alt="Old Product Preview" />
                 ))}
             </div>
+
+           
 
             <div id="createProductFormImage">
               {imagesPreview.map((image, index) => (

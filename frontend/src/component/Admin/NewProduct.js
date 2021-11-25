@@ -50,7 +50,10 @@ const NewProduct = ({ history }) => {
     "New Arrival",
     "Most Selling",
     "99",
-    "Trending"
+    "Trending",
+    "Top Brands",
+    "Product",
+    "Banner"
   ]
 
   useEffect(() => {

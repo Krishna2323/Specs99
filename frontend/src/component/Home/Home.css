@@ -1,6 +1,3 @@
-body{
-  background: -webkit-linear-gradient(rgb(255, 250, 229), rgb(243, 255, 255));
-}
 
 .mainCarousel {
 
@@ -56,15 +53,31 @@ text-decoration:none;
   text-align: center;
   background: none;
   height:fit-content;
-  margin-top: 0;
+  margin-top: 2vmax;
+ 
+}
+
+.linkBannerDiv1:hover{
+  transition: all 0.2s;
+
+
+ transform: translateY(-1vmax);
  
 }
 
 .LinkBannerImage{
   margin: 0 2vmax;
-  width: 20vmax;
-  height: 15vmax;
+  width: 13vmax;
+  height: 10vmax;
   border-radius: 100%;
+}
+
+.linkBannerDiv1>:hover{
+  color: rgb(255, 0, 111);
+}
+
+.linkBannerDiv>:hover{
+  color: rgb(255, 0, 111);
 }
 
 
@@ -115,19 +128,19 @@ text-decoration:none;
 
 
 .productCard {
-  width: 17vmax;
+  width: 15vmax;
   display: flex;
   flex-direction: column;
   text-decoration: none;
   color: rgb(48, 48, 48);
-  margin: 1vmax;
+  margin:1vmax ;
   transition: all 0.5s;
   padding-bottom: 0.5vmax;
 }
 
 .productCard > img {
-  width: 17vmax;
-  height: 13vmax;
+  width: 15vmax;
+  height: 11vmax;
   border-radius: 50px;
 }
 

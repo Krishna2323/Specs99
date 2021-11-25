@@ -84,7 +84,7 @@ useEffect(() => {
         <MetaData title="Products - Specss99"/>
           <h1 className="productsHeadingC"  >{match.params.keyword}</h1>
           <div className="productsC">
-            {products && products.filter((product)=>product.displayType !== "Trending").map((product) => (
+            {products && products.filter((product)=>product.displayType !== "Trending" && product.mrp >25).map((product) => (
             
                 <ProductCard key={product._id} products={product} />
               ))}

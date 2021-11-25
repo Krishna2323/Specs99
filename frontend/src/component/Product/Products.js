@@ -10,63 +10,55 @@ import { Typography } from "@mui/material";
 import { useAlert } from "react-alert";
 import MetaData from "../layout/MetaData";
 
+
+const categories = [
+  "Sunglasses",
+  "Spectacles",
+  "Contact Lenses",
+  "Blue-Cut Glasses",
+  
+
+]
+
 const Products = ({ match,location }) => {
-  const { products, loading, resultPerPage,error,filteredProductsCount } = useSelector(
-    (state) => state.products
-  );
+  const dispatch = useDispatch();
 
   const alert = useAlert();
 
-
-  const categories = [
-    "Sunglasses",
-    "Spectacles",
-    "Contact Lenses",
-    "Blue-Cut Glasses",
-    
-
-  ]
-
-const [category, setCategory] = useState('')
-const [rating, setRating] = useState(0)
-
-  let counts=filteredProductsCount
-
   const [currentPage, setCurrentPage] = useState(1);
-  const [Price, setPrice] = useState([0,25000])
+  const [Price, setPrice] = useState([0, 25000]);
+  const [category, setCategory] = useState("");
 
+  const [rating, setRating] = useState(0);
 
-  const priceHandler=(event,newPrice)=>{
-      setPrice(newPrice)
-  }
+  const {
+    products,
+    loading,
+    error,
+    
+    resultPerPage,
+    filteredProductsCount,
+  } = useSelector((state) => state.products);
+
+  const keyword = match.params.keyword;
 
   const setCurrentPageNo = (e) => {
     setCurrentPage(e);
   };
 
-  const [keyword, setKeyword] = useState("")
-  
-
-
-  const dispatch = useDispatch();
+  const priceHandler = (event, newPrice) => {
+    setPrice(newPrice);
+  };
+  let counts = filteredProductsCount;
 
   useEffect(() => {
-    if(error){
-      alert.error(error)
-      dispatch(clearError())
+    if (error) {
+      alert.error(error);
+      dispatch(clearError());
     }
 
-    if(match.params.keyword){
-      setKeyword(match.params.keyword);
-
-    }
-
-    if(location.pathname === "/products"){
-      setKeyword("")
-    }
-    
-    dispatch(getProduct(keyword, currentPage,Price,category,rating));
-  }, [dispatch, keyword, currentPage,error,Price,category,rating,alert,match.params.keyword,location.pathname]);
+    dispatch(getProduct(keyword, currentPage, Price, category, rating));
+  }, [dispatch, keyword, currentPage, Price, category, rating, alert, error]);
 
 
   
@@ -80,7 +72,7 @@ const [rating, setRating] = useState(0)
         <MetaData title="Products - Specss99"/>
           <h1 className="productsHeading">{location.pathname === "/products"?"Products":keyword}</h1>
           <div className="products">
-            {products && products.filter((product)=>product.displayType !== "Trending").map((product) => (
+            {products && products.filter((product)=>product.displayType === "New Arrival" || product.displayType === "Featured" ||  product.displayType === "Most Selling" || product.displayType === "Product" ||  product.displayType === "99").map((product) => (
                 <ProductCard key={product._id} products={product} />
               ))}
           </div>

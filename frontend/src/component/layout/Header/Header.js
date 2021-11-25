@@ -61,7 +61,7 @@ history.push("/login")
     <div className="searchBar">
     <form onSubmit={searchSubmitHandler}  >
         <input type="text" onChange={(e)=>setkeyword(e.target.value)} placeholder="Find Specs"/>
-        <button className="searchButton" type="button"><SearchOutlined fontSize={window.innerWidth > 600 ? "large":"medium"}  /></button>
+        <button onClick={searchSubmitHandler} className="searchButton" type="button"><SearchOutlined fontSize={window.innerWidth > 600 ? "large":"medium"}  /></button>
         {IsAuthenticated===false &&
           <button className="loginButton"  onClick={toLogin} type="button">Login/Register</button>}
 

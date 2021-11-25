@@ -47,7 +47,7 @@ const Home = ({ history }) => {
           <div className="linkBannerDiv">
             {products &&
               products
-                .filter((products) => products.displayType==="Trending"  )
+                .filter((products) => products.displayType==="Top Brands"  )
                 .map((products) => (
                   <LinkBanner
                     key={products._id}
@@ -80,7 +80,23 @@ const Home = ({ history }) => {
       ))}
 </div>
 
+<h2 className="homeHeading">Trending Products</h2>
 
+
+<div className="container" id="container">
+  {products &&
+    products
+      .filter((products) => products.displayType.includes("New Arrival"))
+      .map((product) => (
+        <ProductCard key={product._id} products={product} />
+      ))}
+      {products &&
+    products
+      .filter((products) => products.displayType.includes("New Arrival"))
+      .map((product) => (
+        <ProductCard key={product._id} products={product} />
+      ))}
+</div>
 
         </Fragment>
       )}
