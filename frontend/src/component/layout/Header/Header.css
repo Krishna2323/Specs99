@@ -101,8 +101,7 @@ margin-left: 5vmax;
   
     background: -webkit-linear-gradient(rgb(29, 29, 29), rgb(0, 0, 0));
   
-    opacity: 95%;
-    height: 30px;
+  height: 30px;
   }
   
   .navbarTop > li > a {
