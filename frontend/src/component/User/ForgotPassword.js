@@ -44,6 +44,7 @@ const [email, setEmail] = useState("")
           type:FORGOT_PASSWORD_RESET
       })
     }
+    window.scrollTo(0, 0)
 
     
   },

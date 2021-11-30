@@ -1,8 +1,8 @@
 footer{
   display: flex;
 align-items: center;  min-height: 40vh;
+bottom: 0;
 background: -webkit-linear-gradient(rgb(229, 205, 117), rgb(126, 181, 103));
-margin-top: 10vmax;
 }
 
 footer >.leftFooter{
@@ -91,8 +91,8 @@ color: black;
       footer{
         display: flex;
       align-items: center;  min-height: 25vh;
+      bottom: 0;
       background: -webkit-linear-gradient(rgb(229, 205, 117), rgb(126, 181, 103));
-      margin-top: 10vmax;
       }
       
       footer >.leftFooter{

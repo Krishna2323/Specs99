@@ -47,7 +47,8 @@ const [confirmPassword, setConfirmPassword] = useState("")
             type:FORGOT_PASSWORD_RESET
         })
       }
-  
+      window.scrollTo(0, 0)
+
       
     },
     [dispatch,error,alert,message,success,history])

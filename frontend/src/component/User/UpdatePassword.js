@@ -65,7 +65,8 @@ const UpdatePassword = () => {
         })
       }
   
-      
+      window.scrollTo(0, 0)
+
     },
     [dispatch,error,alert,isUpdated,history])
 

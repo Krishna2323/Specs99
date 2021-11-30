@@ -13,7 +13,8 @@ const Profile = ({history}) => {
     useEffect(() => {
       if (IsAuthenticated === false) {
         history.push("/login");
-      }
+      }    window.scrollTo(0, 0)
+
     }, [history, IsAuthenticated]);
     return (
       <Fragment>

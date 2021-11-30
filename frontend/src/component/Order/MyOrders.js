@@ -82,6 +82,7 @@ const MyOrders = () => {
       alert.error(error);
       dispatch(clearError());
     }
+    window.scrollTo(0, 0)
 
     dispatch(myOrders());
   }, [dispatch, alert, error]);

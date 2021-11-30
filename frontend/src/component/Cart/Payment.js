@@ -112,6 +112,8 @@ const Payment = ({ history }) => {
       alert.error(error);
       dispatch(clearError());
     }
+    window.scrollTo(0, 0)
+
   }, [dispatch, error, alert]);
 
   return (

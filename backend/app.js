@@ -6,6 +6,7 @@ const product=require("./routes/productsRoute");
 const user =require("./routes/usersRoute");
 const order=require("./routes/ordersRoute")
 const payment = require("./routes/paymentRoute");
+const banner = require("./routes/bannerRoute")
 const path=require("path")
 
 
@@ -33,6 +34,8 @@ app.use("/api/vi", payment);
 app.use("/api/vi",product)
 app.use("/api/vi",user)
 app.use("/api/vi",order)
+app.use("/api/vi",banner)
+
 
 app.use(middleware);
 

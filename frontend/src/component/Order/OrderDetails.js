@@ -20,6 +20,7 @@ const OrderDetails = ({ match }) => {
       alert.error(error);
       dispatch(clearError());
     }
+    window.scrollTo(0, 0)
 
     dispatch(getOrderDetails(match.params.id));
   }, [dispatch, alert, error, match.params.id]);

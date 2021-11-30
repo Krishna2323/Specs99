@@ -5,73 +5,89 @@ import Loader from "../Loader/Loader";
 import { clearError, getProduct } from "../../actions/productsAction";
 import ProductCard from "../Home/ProductCard";
 import Pagination from "react-js-pagination";
-
+import * as FcIcons from "react-icons/fc";
+import * as MdIcons  from 'react-icons/md';
+import AttachMoneyIcon from "@material-ui/icons/AttachMoney";
+import * as AiIcons from 'react-icons/ai';
 import { useAlert } from "react-alert";
 import MetaData from "../layout/MetaData";
 
 const ProductByCategory = ({ match,location }) => {
 
+  const minPriceList=[
+    0,
+    1000,
+    2000,
+    3000,
+    4000,
+    5000,
+    10000,
+    15000,
+    20000,
+    25000
+  ]
+  const maxPriceList=[
+    0,
+    1000,
+    2000,
+    3000,
+    4000,
+    5000,
+    10000,
+    15000,
+    20000,
+    25000
+   
+  ]
+  const maxRatingList=[
+    0,
+    1,2,3,4,5
+  ]
+
   
-
-  const { products, loading, resultPerPage,error,filteredProductsCount } = useSelector(
-    (state) => state.products
-  );
-
-
-
-
-
-  const alert = useAlert();
-
-
-
-
-const [category, setCategory] = useState("")
-const rating=0;
-const keyword=''
-  const counts=filteredProductsCount;
-
-
-  const pppp =products.filter((product)=>product.displayType !== "Trending").lenght
-
-
-
-  const [currentPage, setCurrentPage] = useState(1);
-  const [Price, setPrice] = useState([0,25000])
-
-
-
-  const setCurrentPageNo = (e) => {
-    setCurrentPage(e);
-    setPrice(Price)
-  };
-
 
   const dispatch = useDispatch();
 
+  const alert = useAlert();
+
+  const [box, setBox] = useState(false);
+
+  const [currentPage, setCurrentPage] = useState(1);
+  const [minPrice, setMinPrice] = useState(0);
+  const [maxPrice, setMaxPrice] = useState(25000)
+const category=match.params.keyword;
+  const [rating, setRating] = useState(0);
+
+  const {
+    products,
+    loading,
+    error,
+
+    resultPerPage,
+    filteredProductsCount,
+  } = useSelector((state) => state.products);
+
+  const keyword = ""
+
+  const setCurrentPageNo = (e) => {
+    setCurrentPage(e);
+  };
+
+  // const priceHandler = (event, newPrice) => {
+  //   setPrice(newPrice);
+  // };
+  let counts = filteredProductsCount;
+
+  useEffect(() => {
+    if (error) {
+      alert.error(error);
+      dispatch(clearError());
+    }
+    window.scrollTo(0, 0)
 
 
-  
-  
-  
-
-
-
-
-
-
-
-useEffect(() => {
-  if(error){
-    alert.error(error)
-    dispatch(clearError())
-  }
-
-    setCategory(match.params.keyword)
-
-  
-  dispatch(getProduct(keyword, currentPage,Price,category,rating));
-}, [dispatch, keyword, currentPage,error,Price,category,rating,alert,location,match.params.keyword]);
+    dispatch(getProduct(keyword, currentPage, minPrice,maxPrice ,category, rating));
+  }, [dispatch, keyword, currentPage, minPrice,maxPrice, category, rating, alert, error]);
 
   
 
@@ -82,23 +98,78 @@ useEffect(() => {
       ) : (
         <Fragment>
         <MetaData title="Products - Specss99"/>
-          <h1 className="productsHeadingC"  >{match.params.keyword}</h1>
-          <div className="productsC">
+          <h1 className="productsHeading"  >{filteredProductsCount===0?"No Product Found":match.params.keyword}</h1>
+          <div className="products">
             {products && products.filter((product)=>product.displayType !== "Trending" && product.mrp >25).map((product) => (
             
                 <ProductCard key={product._id} products={product} />
               ))}
           </div>
+          <div className={box ? "filterBox active" : "filterbox"}>
+          <h1  onClick={() => {
+                setBox(!box);
+              }}><MdIcons.MdOutlineClose/></h1>
+            <form action="">
+          
+              <div>
+                <AttachMoneyIcon />
+                <select onChange={(e) => setMinPrice(e.target.value)}>
+                  <option value={minPrice}>Min Price</option>
+                  {minPriceList.map((cate) => (
+                    <option key={cate} value={cate}>
+                      {cate}
+                    </option>
+                  ))}
+                </select>
+                <AttachMoneyIcon />
+
+                <select onChange={(e) => setMaxPrice(e.target.value)}>
+                  <option value={maxPrice}>Max Price</option>
+                  {maxPriceList.map((cate) => (
+                    <option key={cate} value={cate}>
+                      {cate}
+                    </option>
+                  ))}
+                </select>
+              </div>
+              <div>
+                <AiIcons.AiFillStar />
+                <select onChange={(e) => setRating(e.target.value)}>
+                  <option value={rating}>Min Rating</option>
+                  {maxRatingList.map((cate) => (
+                    <option key={cate} value={cate}>
+                      {cate}
+                    </option>
+                  ))}
+                </select>
+              </div>
+
+         
+
+            </form>
+          </div>
+
+          <div className="filterHeading">
+            <h1
+              onClick={() => {
+                setBox(!box);
+              }}
+            >
+              
+              <FcIcons.FcFilledFilter />
+            </h1>
+          </div>
 
 
 
-          {pppp < counts  && (
+
+          {resultPerPage < counts  && (
             <div className="paginationBox">
               <Pagination
                 shape="rounded"
                 activePage={currentPage}
                 itemsCountPerPage={resultPerPage}
-                totalItemsCount={pppp}
+                totalItemsCount={filteredProductsCount}
                 onChange={setCurrentPageNo}
                 nextPageText="Next"
                 prevPageText="Prev"

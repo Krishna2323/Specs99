@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from "react";
+import React, { Fragment, useState,useEffect } from "react";
 import "./Shipping.css";
 import { useSelector, useDispatch } from "react-redux";
 import { saveShippingInfo } from "../../actions/cartAction";
@@ -37,6 +37,13 @@ const Shipping = ({ history }) => {
     );
     history.push("/order/confirm");
   };
+
+  
+  useEffect(() => {
+    window.scrollTo(0, 0)
+
+    }
+  , [])
 
   return (
     <Fragment>

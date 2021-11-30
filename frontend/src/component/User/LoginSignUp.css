@@ -1,6 +1,7 @@
 .LoginSignUpContainer {
     width: 100vw;
     height: 100vh;
+    min-height: 100vh;
     max-width: 100%;
     display: flex;
     justify-content: center;
@@ -9,6 +10,13 @@
     position: fixed;
     top: 0%;
     left: 0;
+    margin-bottom: 5vmax;
+  }
+  html, body{
+    height: 100%;
+  }
+  body>input{
+    display: none;
   }
   
   .LoginSignUpBox {
@@ -67,6 +75,7 @@
   }
   .loginForm > div > input,
   .signUpForm > div > input {
+    display: flex;
     padding: 1vmax 4vmax;
     padding-right: 1vmax;
     width: 100%;
@@ -137,6 +146,7 @@
     border-radius: 4px;
     outline: none;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.219);
+    display:block;
   }
   
   .loginBtn:hover,
@@ -183,6 +193,7 @@
     .signUpForm > div > input {
       padding: 2.5vmax 5vmax;
       font: 300 1.7vmax cursive;
+      width: 100%;
     }
   
     .loginForm > div > svg,
@@ -209,5 +220,10 @@
       font: 300 1.9vmax "Roboto";
       padding: 1.8vmax;
     }
+    html, body{
+      height: 100%;
+    }
   }
+
+
   

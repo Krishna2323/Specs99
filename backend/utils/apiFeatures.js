@@ -36,6 +36,7 @@ class ApiFeatures {
     }
 
     pagiNation(resultPerPage){
+    //    const resultPerPage= Number(this.queryStr.perPageProduct) || 7;
         const currentPage= Number(this.queryStr.page) || 1;
         const skip = resultPerPage * (currentPage-1);
 

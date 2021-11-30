@@ -1,38 +1,52 @@
-
 .mainCarousel {
-
-width: 100%;
-justify-content: center;
-height: 60%;
+  width: 100%;
+  justify-content: center;
+  height: 60%;
+}
+.all{
+  display: flex;
+  flex-direction: column;
+  margin-top: 0;
+  background: rgb(255,255,255);
+  background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(255,176,176,1) 100%);
+}
+.div1,.div2,.div3{
+  border-bottom: rgb(255, 56, 103) dashed  2px;
 }
 
 
+.all>.div1{
+  background: rgb(255,255,255);
+  background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(176,255,241,1) 100%);
+}
+.all>.div2{background: rgb(255,255,255);
+  background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgb(255, 191, 173) 100%);}
 
+  .all>.div4{
+    background: rgb(255,255,255);
+    background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(176,255,241,1) 100%);
+  }
 
-.HomeBanner{
+.HomeBanner {
   width: 100%;
   height: 35vmax;
 }
 
-
-.topBrands{
-  background-color: rgb(157, 255, 242);
-}
-
-.homeHeadingTopCollection{  text-align: center;
-  font-family: Roboto;
-  font-size: 2vmax;
-  border-bottom: 1px solid rgba(21, 21, 21, 0.5);
-  width: 20vmax;
+.homeHeadingTopCollection {
+  text-align: center;
+  font-size: 3.5vmax;
+  width: 40vmax;
   padding: 1vmax;
   margin: 1vmax auto;
-  background: -webkit-linear-gradient(rgb(0, 255, 251), rgb(255, 0, 128));
+  background: linear-gradient(rgb(255, 111, 111), rgb(255, 0, 128));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-
 }
 
-.linkBannerDiv1{
+
+
+
+.linkBannerDiv1 {
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -40,73 +54,57 @@ height: 60%;
   text-decoration: none;
 
   color: rgb(0, 0, 0);
+  height: fit-content;
+  margin-bottom: 3vmax;
 }
-.linkBannerDiv1 > span{
-font-size: 2vmax;
-text-decoration:none;
+.linkBannerDiv1 > span {
+  font-size: 2vmax;
+  text-decoration: none;
 }
 
-.linkBannerDiv{
+.linkBannerDiv {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   text-align: center;
   background: none;
-  height:fit-content;
-  margin-top: 2vmax;
- 
+  height: fit-content;
+
 }
 
-.linkBannerDiv1:hover{
+.linkBannerDiv1:hover {
   transition: all 0.2s;
 
-
- transform: translateY(-1vmax);
- 
+  transform: translateY(-1vmax);
 }
 
-.LinkBannerImage{
-  margin: 0 2vmax;
+.LinkBannerImage {
+  margin: 1vmax 1vmax;
   width: 13vmax;
   height: 10vmax;
   border-radius: 100%;
 }
 
-.linkBannerDiv1>:hover{
+.linkBannerDiv1 > :hover {
   color: rgb(255, 0, 111);
 }
 
-.linkBannerDiv>:hover{
+.linkBannerDiv > :hover {
   color: rgb(255, 0, 111);
 }
-
-
-
-
-
-
-
 
 .linkBannerDiv > img {
   height: 15vmax;
   border-radius: 100%;
-
 }
-
-
-
-
-
-
 
 .homeHeading {
   text-align: center;
   font-family: Roboto;
-  font-size: 2vmax;
-  border-bottom: 1px solid rgba(21, 21, 21, 0.5);
-  width: 20vmax;
+  font-size: 3vmax;
+  width: 40vmax;
   padding: 1vmax;
-  margin: 5vmax auto;
+  margin: 2vmax auto;
   background: -webkit-linear-gradient(rgb(0, 255, 251), rgb(255, 0, 128));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -114,34 +112,31 @@ text-decoration:none;
 
 .container {
   display: flex;
-  margin: 2vmax auto;
+  margin: auto;
   flex-wrap: wrap;
   justify-content: center;
   max-width: 100%;
   height: fit-content;
 }
 
- 
-
-
-
-
-
 .productCard {
-  width: 15vmax;
+  width: 18vmax;
   display: flex;
+
   flex-direction: column;
   text-decoration: none;
   color: rgb(48, 48, 48);
-  margin:1vmax ;
+  margin: 1.1vmax;
   transition: all 0.5s;
   padding-bottom: 0.5vmax;
 }
 
 .productCard > img {
-  width: 15vmax;
-  height: 11vmax;
+  width: 17vmax;
+  height: 13vmax;
   border-radius: 50px;
+  margin: auto;
+
 }
 
 .productCard > div {
@@ -149,19 +144,23 @@ text-decoration:none;
   display: flex;
   justify-content: flex-start;
   align-items: center;
+  margin: auto;
+
 }
 
 .productCardSpan {
   margin: 0.5vmax;
   font: 300 0.7vmax "Roboto";
+  margin: auto;
+
 }
 .productCard > h6 {
- position: absolute;
- background-color: rgb(255, 0, 0);
- width: 4vmax;
- text-align: center;
- border-radius: 3vmax;
- color: white;
+  position: absolute;
+  background-color: rgb(255, 0, 0);
+  width: 4vmax;
+  text-align: center;
+  border-radius: 3vmax;
+  color: white;
 }
 
 .productCard > p {
@@ -169,140 +168,102 @@ text-decoration:none;
   font-size: 1.2vmax;
   margin: 1vmax 0.5vmax;
   margin-bottom: 0;
+  
 }
 
 .productCard > span {
-  margin: 0.5vmax;
+  margin: 0.5vmax auto;
   color: tomato;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   font-size: 1vmax;
 }
 
-.priceTags > h4{
+.priceTags > h4 {
   margin-right: 1vmax;
+  
 }
 
-.priceTags > h5{
-text-decoration: line-through 1.2px red;
+.priceTags > h5 {
+  text-decoration: line-through 1.2px red;
 }
 .productCard:hover {
   box-shadow: 0 0 5px rgba(15, 15, 15, 0.26);
-  
 
   transform: translateY(-1vmax);
 
-  background: -webkit-linear-gradient(rgb(255, 255, 255), rgb(255, 0, 0));
-  -webkit-background-clip: text;
-
-
-  -webkit-text-fill-color:rgb(255, 107, 151);
+  color: tomato;
 }
 
-@media screen and (max-width: 600px) {
-
+@media screen and (max-width: 1000px) {
   .mainCarousel {
-
     display: block;
     width: 100%;
-    }
+  }
+  .HomeBanner{
+    height: 28vmax;
+  }
 
-    
+  .homeHeading {
+    text-align: center;
+    font-family: Roboto;
+    font-size: 3.4vmax;
+    color: rgb(0, 0, 0, 0.7);
+  }
 
-    
-    
-    
-    
-    
-    
-    .homeHeading {
-      text-align: center;
-      font-family: Roboto;
-      font-size: 2.4vmax;
-      border-bottom: 1px solid rgba(21, 21, 21, 0.5);
-      width: 30vmax;
-      padding: 1vmax;
-      margin: 5vmax auto;
-      color: rgb(0, 0, 0, 0.7);
-    }
-    
-    .container {
-      display: flex;
-      margin: 1vmax 1vmax;
-      width: fit-content;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-    
-    .productCard {
-      width: 21vmax;
-      display: flex;
-      flex-direction: column;
-      text-decoration: none;
-      color: rgb(48, 48, 48);
-      margin: 2vmax .7vmax ;
-      transition: all 0.5s;
-      padding-bottom: 0.5vmax;
-    }
-    
-    .productCard > img {
-      width: 21vmax;
-      height: 17vmax;
-      border-radius: 50px;
-    }
-    
-    .productCard > div {
-      margin: 1vmax;
-      display: flex;
-      justify-content: flex-start;
-      align-items: center;
-    }
-    
-    .productCardSpan {
-      margin: 0.5vmax;
-      font: 300 0.7vmax "Roboto";
-    }
-    .productCard > h6 {
-     position: absolute;
-     background-color: aqua;
-     width: 7vmax;
-     text-align: center;
-     border-radius: 3vmax;
-    }
-    
-    .productCard > p {
-      font-family: "Roboto";
-      font-size: 1.2vmax;
-      margin: 1vmax 0.5vmax;
-      margin-bottom: 0;
-    }
-    
-    .productCard > span {
-      margin: 0.5vmax;
-      color: tomato;
-      font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-      font-size: 1.9vmax;
-    }
-    
-    .priceTags > h4{
-      margin-right: 1vmax;
-      font-size: 2.2vmax;
-    }
-    
-    .priceTags > h5{
+  .container {
+    display: flex;
+    margin: 1vmax 1vmax;
+    width: fit-content;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+ .productCard{
+margin: 2vmax 2.2vmax;
+ }
+
+  .productCard > img {
+    width: 21vmax;
+    height: 18vmax;
+    border-radius: 30px;
+  }
+
+  .productCard > div {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  .productCardSpan {
+    margin: 0.5vmax;
+    font: 300 0.7vmax "Roboto";
+  }
+  .productCard > h6 {
+    position: absolute;
+    background-color: aqua;
+    width: 7vmax;
+    text-align: center;
+    border-radius: 3vmax;
+  }
+
+  .productCard > p {
+    font-family: "Roboto";
+    font-size: 1.2vmax;
+ 
+  }
+
+  .productCard > span {
+   
+    font-size: 1.9vmax;
+  }
+
+  .priceTags > h4 {
+    font-size: 2vmax;
+  }
+
+  .priceTags > h5 {
     text-decoration: line-through 1.2px red;
     font-size: 1.7vmax;
+  }
 
-    }
-    .productCard:hover {
-      box-shadow: 0 0 5px rgba(15, 15, 15, 0.26);
-      
-    
-      transform: translateY(-1vmax);
-    
-      background: -webkit-linear-gradient(rgb(255, 255, 255), rgb(255, 0, 0));
-      -webkit-background-clip: text;
-    
-    
-      -webkit-text-fill-color:rgb(255, 107, 151);
-    }
 }

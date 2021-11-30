@@ -32,17 +32,20 @@ import {
   DELETE_REVIEW_SUCCESS
 } from "../constants/Productconstants";
 
-export const getProduct = (keyword="",currentPage=1,Price=[0,25000],category,rating=0) => async (dispatch) => {
+
+export const getProduct = (perPageProduct=20,keyword="",currentPage=1,minPrice=0,maxPrice=25000,category,rating=0) => async (dispatch) => {
   try {
     dispatch({ type: ALL_PRODUCT_REQUEST });
 
-    
+  
 
-    let link = `/api/vi/products?keyword=${keyword}&page=${currentPage}&price[lte]=${Price[1]}&price[gte]=${Price[0]}&ratings[gte]=${rating}` ;
+
+    let link = `/api/vi/products?perPageProduct=${perPageProduct}&keyword=${keyword}&page=${currentPage}&price[lte]=${maxPrice}&price[gte]=${minPrice}&ratings[gte]=${rating}` ;
 
     if(category){
-      link=`/api/vi/products?keyword=${keyword}&page=${currentPage}&price[lte]=${Price[1]}&price[gte]=${Price[0]}&category=${category}&ratings=${rating}`
+      link=`/api/vi/products?keyword=${keyword}&page=${currentPage}&price[lte]=${maxPrice}&price[gte]=${minPrice}&category=${category}&ratings=${rating}`
     }
+ 
 
     const { data } = await axios.get(link);
     dispatch({

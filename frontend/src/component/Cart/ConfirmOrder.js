@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React, { Fragment ,useEffect} from "react";
 import CheckoutSteps from "../Cart/CheckoutSteps";
 import { useSelector } from "react-redux";
 import MetaData from "../layout/MetaData";
@@ -35,6 +35,13 @@ const ConfirmOrder = ({ history }) => {
 
     history.push("/process/payment");
   };
+
+  
+  useEffect(() => {
+    window.scrollTo(0, 0)
+
+    }
+  , [])
 
   return (
     <Fragment>

@@ -1,36 +1,136 @@
-.navbarTop {
-  display: flex;
-  justify-content:unset;
-  position: block;
-  align-items: center;
 
 
+
+
+*{
+  margin: 0;
+  padding: 0;
+  user-select: none;
+  box-sizing: border-box;
+  font-family:sans-serif;
+
+}
+.navbarmob {
   background: -webkit-linear-gradient(rgb(29, 29, 29), rgb(0, 0, 0));
-
-  height: 70px;
+  height: 3.5vmax;
+  display: flex;
+  flex: unset;
+  width: 100%;
+  align-items: center;
 }
 
-.navbarTop > li > a {
+.navbarmob > .navbarHeading {
+justify-content: center;}
+.menu-bars {
+  margin-left: 2rem;
+  font-size: 2rem;
+  background: none;
+}
+
+.nav-menu {
+  background: -webkit-linear-gradient(rgb(29, 29, 29), rgb(0, 0, 0));
+  z-index: 300;
+  width: 300px;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: -100%;
+  transition: 850ms;
+}
+
+.nav-menu.active {
+  left: 0;
+  transition: 350ms;
+}
+
+.nav-text {
+  display: flex;
+  flex: start;
+  align-items: center;
+  padding: 8px 0px 8px 16px;
+  list-style: none;
+  height: 60px;
+}
+
+.nav-text a {
   text-decoration: none;
-  color: #00ffc8;
-margin: 1.5vmax;
-font-size: .9vmax;
+  color: #f5f5f5;
+  font-size: 18px;
+  width: 95%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+  border-radius: 4px;
 }
 
-.navbarTop > li > a:hover {
-  text-decoration: none;
-  color: #ffffff;
-margin: 1.5vmax;
-font-size: .9vmax;
+.nav-text a:hover {
+color: cyan;
+border-left: 3px solid cyan;}
+
+
+.nav-menu-items {
+  width: 100%;
+  list-style: none;
+}
+.nav-menu-items>li>span {
+margin-left: 1vmax;
 }
 
-.navbarTop > li{
-
-margin-left: 5vmax;
+.navbar-toggle {
+  background: transparent;
+  width: 100%;
+  height: 80px;
+  display: flex;
+  flex: start;
+  align-items: center;
 }
 
-.navmob{
+.nav-menu>ul>li>span {
+  margin-left: 16px;
+
+}
+
+
+.nav-menu>ul>li>.searchInput2{
   display: none;
+}
+
+.navbarmob{
+  display: flex;
+  flex-direction: row;
+  justify-content: unset;
+}
+
+.navbarmob>.searchInput1{
+display: flex;
+flex-direction: row;
+  
+}
+
+.navbarmob>.searchInput1>input{
+  border: none;
+  border-bottom: 1px solid rgba(203, 203, 203, 0.76);
+  width: 100%;
+  font-size: 1.5vmax;
+  outline: none;
+  color:rgb(255, 255, 255);
+  font-weight: 100;
+  background: transparent;
+  z-index: 1;
+  text-decoration: none;
+  list-style: none;
+  margin-left: 35vmax;
+padding: 0;}
+.navbarmob>.searchInput1>button{
+  text-align: center;
+  margin-top: 1vmax;
+  background: transparent;
+  color: rgb(255, 255, 255);
+  border: none;
+  
 }
 
 
@@ -41,162 +141,194 @@ margin-left: 5vmax;
   font-size: 1.1vmax;
   background: transparent;
   border-radius: 10px;
-  border-color: rgb(0, 255, 136);
   width: 9vmax;
-  margin-left: 2vmax;
   color: rgb(255, 255, 255);
+  margin:auto;
 }
+.loginButton:hover {
+  color: rgb(212, 255, 181);
+  
+  }
 
 
 
-.searchBar > form > .searchButton {
-  background: transparent;
-  border: none;
-  color: rgb(255, 255, 255);
-  margin-left: 1vmax;
-  align-items: center;
 
-
-}
-
-.searchBar {
-  margin-left: 15vmax;
-}
-
-.searchBar > form > input {
-  border: none;
-  border-bottom: 1px solid rgba(128, 128, 128, 0.76);
-  width: 15vmax;
-  font-size: 1.2vmax;
-  outline: none;
-  color:rgb(255, 255, 255);
-  font-weight: 100;
-  background: transparent;
-  z-index: 1;
-}
-
-
-.searchBar > form > input::placeholder {
-
-  color: rgb(255, 255, 255);
-
-}
 .navbarHeading {
   background: -webkit-linear-gradient(rgb(229, 205, 117), rgb(126, 181, 103));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   margin-left: 1vmax;
+  font-size: 3vmax;
   justify-content: center;
+  font-family: sans-serif;
+
+  display: flex;}
+
+
+
+
+
+  @media screen and (max-width: 1200px){
+
+    .navbarmob {
+ height: 5vmax;
+    }
+  }
+
+
+     @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+
+
+     @media screen and (max-width: 1000px) {
+
+
+      .navbarmob>.searchInput1{
+        display: none;
+          
+        }
+       
+     
+*{
+  margin: 0;
+  padding: 0;
+  user-select: none;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+.navbarmob {
+  background: -webkit-linear-gradient(rgb(29, 29, 29), rgb(0, 0, 0));
+  height: 7vmax;
+  display: flex;
+  flex: start;
+  align-items: center;
+}
+
+
+.menu-bars {
+  margin-left: 1rem;
+  font-size: 2rem;
+  background: none;
+}
+
+.nav-menu {
+  background: -webkit-linear-gradient(rgb(29, 29, 29), rgb(0, 0, 0));
+  z-index: 300;
+  width: 300px;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: -100%;
+  transition: 850ms;
+}
+
+.nav-menu.active {
+  left: 0;
+  transition: 350ms;
+}
+
+.nav-text {
+  display: flex;
+  flex: start;
+  align-items: center;
+  padding: 8px 0px 8px 16px;
+  list-style: none;
+  height: 60px;
+}
+
+.nav-text a {
+  text-decoration: none;
+  color: #f5f5f5;
+  font-size: 18px;
+  width: 95%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+  border-radius: 4px;
+}
+
+.nav-text a:hover {
+color: cyan;
+border-left: 3px solid cyan;}
+
+
+.nav-menu-items {
+  width: 100%;
+}
+
+.navbar-toggle {
+  background: transparent;
+  width: 100%;
+  height: 80px;
+  display: flex;
+  flex: start;
+  align-items: center;
+}
+
+.nav-menu>ul>li>span {
+  margin-left: 16px;
+
+}
+
+.dataLi>span{
+margin: 4vmax 0;
+}
+
+
+
+.nav-menu>ul>li>.searchInput2{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-right: 1vmax;
+}
+.nav-menu>ul>li>.searchInput2>input {
+  border: none;
+  border-bottom: 1px solid rgba(203, 203, 203, 0.76);
+  width: 100%;
+  font-size: 3.3vmax;
+  outline: none;
+  color:rgb(255, 255, 255);
+  font-weight: 100;
+  background: transparent;
+  z-index: 1;
+  margin: 20px 0;
+  text-decoration: none;
+  list-style: none;
+  left: 0;
+
+}
+
+
+
+.navItems{
+  margin-left: .5vmax;
+}
+.nav-menu>ul>li>.searchInput2>button {
+
+text-align: center;
+background: transparent;
+color: turquoise;
+border: none;
+}
+.navbarHeading {
+  background: -webkit-linear-gradient(rgb(229, 205, 117), rgb(126, 181, 103));
+  -webkit-background-clip: text;
+  font-size: 5vmax;
+  -webkit-text-fill-color: transparent;
+  justify-content: center;
+font-family: sans-serif;
   display: flex;
 }
 
-
-
-@media screen and (max-width: 600px) {
-  .navbarTop {
-    display: flex;
-    justify-content:unset;
-    overflow: auto;
-  
-  
-    background: -webkit-linear-gradient(rgb(29, 29, 29), rgb(0, 0, 0));
-  
-  height: 30px;
-  }
-  
-  .navbarTop > li > a {
-    text-decoration: none;
-    color: #00ffc8;
-  margin: 1.5vmax;
-  font-size:1.2vmax;
-  }
-  
-  .navbarTop > li > a:hover {
-    text-decoration: none;
-    color: #ffffff;
-  margin: 0vmax;
-  font-size: .9vmax;
-  }
-  
-  .navbarTop > .navlap{
-  display: none;
- 
-  }
-
-
-  .navmob{
-background-color: rgb(139, 255, 253);  
-  height: 4vmax;
-    justify-content: center;
-    display: flex;
-    
-  }
-
-  .navmob >a{
-    text-decoration: none;
-    color: #000000;
-  margin: 0 1.2vmax;
-  background: transparent;
-    margin-top: .7vmax;
-  font-size:1.6vmax;
-  }
-  
-  
-  
-  
-  
-  .loginButton{
-    font-size: 1.1vmax;
-    background: transparent;
-    border-radius: 10px;
-    border-color: rgb(0, 255, 136);
-    width: 2vmax;
-    margin-left: 0vmax;
-    color: rgb(255, 255, 255);
-  }
-  
-  
-  
-  .searchBar > form > .searchButton {
-    background: transparent;
-    border: none;
-    color: rgb(255, 255, 255);
-    margin-left: 1vmax;
-    align-items: center;
-  
-  
-  }
-  
-  .searchBar {
-    margin-left: 5vmax;
-  }
-  
-  .searchBar > form > input {
-    border: none;
-    border-bottom: 1px solid rgba(128, 128, 128, 0.76);
-    width: 19vmax;
-    font-size: 1.2vmax;
-    outline: none;
-    color:rgb(255, 255, 255);
-    font-weight: 100;
-    background: transparent;
-  }
-  
-  
-  .searchBar > form > input::placeholder {
-  
-    color: rgb(255, 255, 255);
-  
-  }
-  .navbarHeading {
-    background: -webkit-linear-gradient(rgb(229, 205, 117), rgb(126, 181, 103));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    font-size: 2.5vmax;
-    justify-content: center;
-    display: flex;
-    margin-left: .3vmax;
-    margin-top: .3vmax;
-  }
-  
+.loginButton{
+  font-size: 1.5vmax;
+  border-radius: 10px;
+  border:1px solid rgb(0, 255, 136);
+  width: 13vmax;
 }
+
+  
+     }

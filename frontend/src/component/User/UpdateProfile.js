@@ -78,6 +78,7 @@ const [email, setEmail] = useState("")
           type:UPDATE_PROFILE_RESET
       })
     }
+    window.scrollTo(0, 0)
 
     
   },

@@ -51,6 +51,7 @@ function LogoutUser(){
 
   return (
     <Fragment>
+    <div className="speed1">
      <SpeedDial
         ariaLabel="SpeedDial tooltip example"
         onClose={() => setOpen(false)}
@@ -81,6 +82,7 @@ function LogoutUser(){
           ></SpeedDialAction>
         ))}
       </SpeedDial>
+      </div>
     </Fragment>
   );
 };

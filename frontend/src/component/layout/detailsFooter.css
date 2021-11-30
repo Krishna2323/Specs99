@@ -1,0 +1,59 @@
+.detailsFooter {
+  width: 100%;
+  position: fixed;
+  height: 3vmax;
+  bottom: 0;
+  background: -webkit-linear-gradient(rgb(29, 29, 29), rgb(0, 0, 0));
+  z-index: 307;
+  border: none;
+  display: flex;
+  flex-direction: column;
+}
+.detailsFooter > span {
+  margin: auto;
+  color: rgb(255, 255, 255);
+  font-size: 0.9vmax;
+}
+
+.detailsFooter > div {
+  display: flex;
+  margin: auto;
+  color: aqua;
+  min-height: 1.6vmax;
+}
+
+.detailsFooter > div > a > i {
+  color: white;
+  font-size: 1vmax;
+  margin: auto 0.3vmax;
+  width: 100%;
+  padding: 0 0.3vmax;
+  transition: 300ms;
+}
+.detailsFooter > div > a > i:hover {
+  color: rgb(0, 255, 251);
+  font-size: 1vmax;
+  margin: auto 0.5vmax;
+  width: 100%;
+
+  font-size: 1.4vmax;
+}
+
+@media screen and (max-width: 1000px) {
+  .detailsFooter {
+    height: 6vmax;
+  }
+  .detailsFooter > div > a > i {
+margin: auto .7vmax;
+    font-size: 1.9vmax;
+  }
+  .detailsFooter > span {
+  
+    font-size: 1.4vmax;
+  }
+  .detailsFooter > div > a > i:hover {
+
+  
+    font-size: 2.8vmax;
+  }
+}

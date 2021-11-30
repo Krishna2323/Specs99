@@ -22,8 +22,6 @@ import {
 import { Rating } from "@material-ui/lab";
 import { NEW_REVIEW_RESET } from "../../constants/Productconstants";
 import Loader from "../Loader/Loader";
-import { Next } from "react-bootstrap/esm/PageItem";
-import { NavigateBefore } from "@material-ui/icons";
 
 const ProductDetails = ({ match }) => {
   const dispatch = useDispatch();
@@ -101,6 +99,8 @@ const ProductDetails = ({ match }) => {
       alert.success("Review Submitted Successfully");
       dispatch({ type: NEW_REVIEW_RESET });
     }
+    window.scrollTo(0, 0)
+
     dispatch(getProductDetails(match.params.id));
   }, [dispatch, match.params.id, error, alert, reviewError, success]);
 
@@ -112,7 +112,7 @@ const ProductDetails = ({ match }) => {
         <Fragment>
           <MetaData title={`${product.name} -- ECOMMERCE`} />
           <div className="ProductDetails">
-            <Carousel fade nextIcon={<Next/>} prevIcon={<NavigateBefore color="black"/>}>
+            <Carousel >
               {product.image &&
                 product.image.map((item, i) => (
                   <Carousel.Item interval={2500} >

@@ -39,4 +39,18 @@
   .MuiTypography-root {
     background-color: #fff !important;
   }
+
+
   
+
+  @media screen and (max-width: 600px) {
+
+
+  .sidebar>a {
+    margin: auto;
+  }
+  
+  .ProductLink {
+    font-size: 4vmax;
+      }
+}

@@ -38,12 +38,17 @@ import UpdateUser from "./component/Admin/UpdateUser";
 import ProductReviews from "./component/Admin/ProductReviews";
 import ProductByCategory from "./component/Product/ProductByCategory";
 import NotFound from "./component/Not Found/NotFound"
+import NewBanner from "./component/Admin/NewBanner";
+import BannerList from "./component/Admin/bannerList";
+import DetailsFooter from "./component/layout/detailsFooter";
+
 
 
 
 
 function App() {
 
+  
   
   const [stripeApiKey, setStripeApiKey] = useState("");
 
@@ -59,9 +64,12 @@ function App() {
     store.dispatch(loadUser());
     getStripeApiKey();
   }, []);
+  // window.addEventListener("contextmenu", (e) => e.preventDefault());
 
   return (
     <Router>
+              <DetailsFooter />
+
           <Header />
 
       {IsAuthenticated && <UserOptions user={user} />}
@@ -124,6 +132,19 @@ function App() {
           component={NewProduct}
         />
 
+<ProtectedRoute
+          exact
+          path="/admin/banner"
+          isAdmin={true}
+          component={NewBanner}
+        />
+        
+<ProtectedRoute
+          exact
+          path="/admin/banners"
+          isAdmin={true}
+          component={BannerList}
+        />
 
 <ProtectedRoute
           exact
@@ -169,7 +190,7 @@ function App() {
 
 <Route
           component={
-            window.location.pathname === "/process/payment" ? null : NotFound
+           window.location.pathname === "/process/payment" ? null : NotFound
           }
         />
 

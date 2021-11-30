@@ -8,7 +8,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useAlert } from "react-alert";
 import {login,clearError, register} from "../../actions/userAction"
 
-import logo from "../Images/logo.png"
+import logo from "../Images/userprofile.png"
 
 const LoginSignUp = ({location}) => {
   const dispatch = useDispatch();
@@ -88,7 +88,8 @@ dispatch(login(loginEmail,loginPassword))
       history.push(redirect)
     }
 
-    
+    window.scrollTo(0, 0)
+
   },
   [dispatch,error,alert,IsAuthenticated,history,redirect])
 

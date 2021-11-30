@@ -4,9 +4,9 @@ margin: 0;
   
   
 }
-body{
-  background: -webkit-linear-gradient(rgb(255, 249, 160)rgb(255, 255, 255));
-}
+
+  
+
 
 /* width */
 ::-webkit-scrollbar {
@@ -54,3 +54,28 @@ input[type="number"] {
   color: red !important;
 }
 
+
+
+@media screen and (max-width:1400px) {
+  /* width */
+::-webkit-scrollbar {
+  display: none;
+
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  display: none;
+
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  display: none;
+
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+display: none;
+}}
