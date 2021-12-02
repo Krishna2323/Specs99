@@ -55,7 +55,7 @@ function App() {
   async function getStripeApiKey() {
     const { data } = await axios.get("/api/vi/stripeapikey");
 
-    await setStripeApiKey(data.stripeApiKey);
+     setStripeApiKey(data.stripeApiKey);
   }
 
   const { IsAuthenticated, user } = useSelector((state) => state.user);

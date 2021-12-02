@@ -62,6 +62,7 @@
   
   @media screen and (max-width: 600px) {
     .paymentForm {
+      display: block;
       width: 90%;
     }
   
@@ -76,6 +77,7 @@
     }
   
     .paymentInput {
+      display: block;
       padding: 4vw 10vw;
     }
   
