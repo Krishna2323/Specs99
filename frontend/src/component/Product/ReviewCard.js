@@ -1,7 +1,6 @@
 import React from "react";
 import ReactStars from "react-rating-stars-component"
-// import { useSelector } from "react-redux";
-import logo from "../Images/logo.png"
+import logo from "../Images/userprofile.png"
 
 
 
@@ -9,7 +8,6 @@ import logo from "../Images/logo.png"
 
 const ReviewCard = ({ review }) => {
 
-  // const { user } = useSelector((state) => state.user);
 
 
   const options = {

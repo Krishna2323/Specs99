@@ -58,7 +58,7 @@ const maxRatingList=[
 
 
 
-const Products = ({ match, location }) => {
+const Products = ({ match, location,history }) => {
   const dispatch = useDispatch();
 
 
@@ -73,6 +73,8 @@ const Products = ({ match, location }) => {
 
   const [rating, setRating] = useState(0);
 
+
+
   const {
     products,
     loading,
@@ -82,7 +84,7 @@ productsCount,
     filteredProductsCount,
   } = useSelector((state) => state.products);
 
-  const keyword = match.params.keyword;
+  const keyword = match.params.keyword
 
   const setCurrentPageNo = (e) => {
     setCurrentPage(e);
@@ -92,6 +94,8 @@ productsCount,
   let perPageProduct=12 ;
 
   let counts = filteredProductsCount;
+
+
 
 
 const categoryHandler=(e)=>{
@@ -111,11 +115,16 @@ const categoryHandler=(e)=>{
     }  
     window.scrollTo(0, 0)
 
-
-
+    history.listen((location, action) => {
+      setCurrentPage(1);
+      setMinPrice(0);
+      setMaxPrice(25000);
+      setCategory("");
+      setRating(0);
+  });
 
     dispatch(getProduct(perPageProduct,keyword, currentPage, minPrice,maxPrice ,category, rating));
-  }, [dispatch,perPageProduct, keyword, currentPage, minPrice,maxPrice, category, rating, alert, error]);
+  }, [dispatch,perPageProduct, keyword, currentPage, minPrice,maxPrice, category, rating, alert, error,history]);
 
   return (
     <Fragment>
@@ -185,8 +194,8 @@ const categoryHandler=(e)=>{
             
               <div>
                 <AccountTreeIcon style={{color:"white"}} />
-                <select onChange={(e) =>{categoryHandler(e)}}>
-                  <option value="">Category - {category}</option>
+                <select onChange={(e) =>{categoryHandler(e)|| setCurrentPage(1)}}>
+                  <option value="">Category - {category===""?"All":category}</option>
                   {categories.map((cate) => (
                     <option key={cate} value={cate}>
                       {cate}
@@ -196,7 +205,7 @@ const categoryHandler=(e)=>{
               </div>
               <div>
                 <AttachMoneyIcon style={{color:"white"}}/>
-                <select onChange={(e) => setMinPrice(e.target.value)}>
+                <select onChange={(e) => setMinPrice(e.target.value)|| setCurrentPage(1)}>
                   <option value={minPrice}>Min Price - {minPrice} </option>
                   {minPriceList.map((cate) => (
                     <option key={cate} value={cate}>
@@ -206,7 +215,7 @@ const categoryHandler=(e)=>{
                 </select>
                 <AttachMoneyIcon style={{color:"white"}} />
 
-                <select onChange={(e) => setMaxPrice(e.target.value)}>
+                <select onChange={(e) => setMaxPrice(e.target.value)|| setCurrentPage(1)}>
                   <option value={maxPrice}>Max Price - {maxPrice}</option>
                   {maxPriceList.map((cate) => (
                     <option key={cate} value={cate}>
@@ -217,7 +226,7 @@ const categoryHandler=(e)=>{
               </div>
               <div>
                 <AiIcons.AiFillStar style={{color:"white"}}/>
-                <select onChange={(e) => setRating(e.target.value)}>
+                <select onChange={(e) => setRating(e.target.value) || setCurrentPage(1) }>
                   <option value={rating}>Min Rating - {rating}</option>
                   {maxRatingList.map((cate) => (
                     <option key={cate} value={cate}>

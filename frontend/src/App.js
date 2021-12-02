@@ -37,7 +37,7 @@ import UsersList from "./component/Admin/UsersList";
 import UpdateUser from "./component/Admin/UpdateUser";
 import ProductReviews from "./component/Admin/ProductReviews";
 import ProductByCategory from "./component/Product/ProductByCategory";
-import NotFound from "./component/Not Found/NotFound"
+import NotFound from "./component/Not Found/NotFound";
 import NewBanner from "./component/Admin/NewBanner";
 import BannerList from "./component/Admin/bannerList";
 import DetailsFooter from "./component/layout/detailsFooter";
@@ -55,7 +55,7 @@ function App() {
   async function getStripeApiKey() {
     const { data } = await axios.get("/api/vi/stripeapikey");
 
-    setStripeApiKey(data.stripeApiKey);
+    await setStripeApiKey(data.stripeApiKey);
   }
 
   const { IsAuthenticated, user } = useSelector((state) => state.user);
@@ -189,9 +189,7 @@ function App() {
         />
 
 <Route
-          component={
-           window.location.pathname === "/process/payment" ? null : NotFound
-          }
+          component={window.location.pathname === "/process/payment" ? null : NotFound}
         />
 
       </Switch>

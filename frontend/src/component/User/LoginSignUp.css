@@ -1,24 +1,18 @@
 .LoginSignUpContainer {
     width: 100vw;
-    height: 100vh;
     min-height: 100vh;
     max-width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgb(231, 231, 231);
+    background: linear-gradient(rgb(55, 55, 55), rgb(0, 0, 0));
     position: fixed;
-    top: 0%;
     left: 0;
-    margin-bottom: 5vmax;
-  }
+padding-bottom: 10vmax;  }
   html, body{
     height: 100%;
   }
-  body>input{
-    display: none;
-  }
-  
+
   .LoginSignUpBox {
     background-color: white;
     width: 25vw;
@@ -82,7 +76,8 @@
     box-sizing: border-box;
     border: 1px solid rgba(0, 0, 0, 0.267);
     border-radius: 4px;
-    font: 300 0.9vmax cursive;
+    font-size: .9vmax;
+    font-family: sans-serif;
     outline: none;
   }
   

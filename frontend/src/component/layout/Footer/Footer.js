@@ -14,7 +14,8 @@ const Footer = () => {
         <div className="icons">
         <i class="fab fa-google-play" ></i>
         <i class="fab fa-apple"></i> 
-        <i class="fas fa-thumbs-up"></i></div>     </div>
+        </div>   
+          </div>
 
       <div className="midFooter">
       <img src={Logo} alt="Appstore" />

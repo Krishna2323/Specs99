@@ -37,6 +37,10 @@ export const getProduct = (perPageProduct=20,keyword="",currentPage=1,minPrice=0
   try {
     dispatch({ type: ALL_PRODUCT_REQUEST });
 
+    if(keyword!==""){
+      currentPage=1
+    }
+
   
 
 

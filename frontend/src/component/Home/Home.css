@@ -121,6 +121,7 @@
 
 .productCard {
   width: 18vmax;
+  height: 22vmax;
   display: flex;
 
   flex-direction: column;
@@ -194,7 +195,36 @@
   color: tomato;
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1750px){
+  .productCard{
+    width: 21vmax;
+    height: fit-content;
+ margin: 2vmax 1vmax;
+  }
+ 
+   .productCard > img {
+     width: 21vmax;
+     min-height: 18vmax;
+     max-height: 18vmax;
+     border-radius: 30px;
+   }
+
+   .priceTags > h4 {
+    font-size: 2vmax;
+  }
+
+  .priceTags > h5 {
+    text-decoration: line-through 1.2px red;
+    font-size: 1.7vmax;
+  }
+  
+  .productCard > span {
+   
+    font-size: 1.9vmax;
+  }
+}
+
+@media screen and (max-width: 750px) {
   .mainCarousel {
     display: block;
     width: 100%;
@@ -219,12 +249,15 @@
   }
 
  .productCard{
-margin: 2vmax 2.2vmax;
+   width: 21vmax;
+   height: fit-content;
+margin: 2vmax .5vmax;
  }
 
   .productCard > img {
     width: 21vmax;
-    height: 18vmax;
+    min-height: 18vmax;
+    max-height: 18vmax;
     border-radius: 30px;
   }
 

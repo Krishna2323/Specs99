@@ -37,7 +37,7 @@ const ProductDetails = ({ match }) => {
 
   const options = {
     size: "large",
-    value: product.rating,
+    value: product.ratings,
     readOnly: true,
     precision: 0.5,
   };
@@ -112,6 +112,7 @@ const ProductDetails = ({ match }) => {
         <Fragment>
           <MetaData title={`${product.name} -- ECOMMERCE`} />
           <div className="ProductDetails">
+          <div className="productDetailCorousel">
             <Carousel >
               {product.image &&
                 product.image.map((item, i) => (
@@ -125,7 +126,7 @@ const ProductDetails = ({ match }) => {
                   </Carousel.Item>
                 ))}
             </Carousel>
-
+</div>
             <div>
               <div className="detailsBlock-1">
                 <h2>
@@ -208,9 +209,11 @@ const ProductDetails = ({ match }) => {
               </Button>
             </DialogActions>
           </Dialog>
+         {product.reviews && product.reviews[0]?<p className="noReviews"> Reviews</p>:null} 
 
           {product.reviews && product.reviews[0] ? (
             <div className="reviews">
+
               {product.reviews &&
                 product.reviews.map((review) => (
                   <ReviewCard key={review._id} review={review} />
