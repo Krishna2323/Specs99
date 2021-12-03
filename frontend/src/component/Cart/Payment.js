@@ -123,6 +123,7 @@ const Payment = ({ history }) => {
       <div className="paymentContainer">
         <form className="paymentForm" onSubmit={(e) => submitHandler(e)}>
           <Typography>Card Info</Typography>
+          <h6>Test Card No: 4000 0027 6000 3184</h6>
           <div>
             <CreditCardIcon />  
             <CardNumberElement className="paymentInput" />

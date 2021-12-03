@@ -48,8 +48,7 @@ import DetailsFooter from "./component/layout/detailsFooter";
 
 function App() {
 
-  
-  
+  const pathname = window.location.pathname  
   const [stripeApiKey, setStripeApiKey] = useState("");
 
   async function getStripeApiKey() {
@@ -189,7 +188,7 @@ function App() {
         />
 
 <Route
-          component={window.location.pathname === "/process/payment" ? null : NotFound}
+          component={pathname==="/process/paymrnt"?null: NotFound}
         />
 
       </Switch>

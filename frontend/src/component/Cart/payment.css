@@ -7,6 +7,7 @@
   }
   
   .paymentForm {
+    display: unset;
     width: 22%;
     height: 100%;
   }
@@ -18,6 +19,16 @@
     padding: 1vmax 0;
     text-align: center;
     width: 50%;
+    margin: auto;
+  }
+    
+  .paymentForm > h6 {
+    font: 400 .9vmax "Roboto";
+    color: rgba(0, 0, 0, 0.753);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.13);
+    padding: 1vmax 0;
+    text-align: center;
+    width: 70%;
     margin: auto;
   }
   
